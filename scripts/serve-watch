@@ -1,0 +1,63 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . "/../bootstrap/build.php";
+
+use Symfony\Component\Finder\Finder;
+use Yosymfony\ResourceWatcher\ResourceWatcher;
+use Yosymfony\ResourceWatcher\ResourceCacheFile;
+
+use function HelpfulRobot\Process\start;
+use function HelpfulRobot\Process\stop;
+
+$finder = new Finder();
+
+$finder->files()
+    ->name("*.pre")
+    ->in(__DIR__ . "/../app");
+
+$cache = new ResourceCacheFile(
+    __DIR__ . "/.dev-changes.php"
+);
+
+$watcher = new ResourceWatcher($cache);
+$watcher->setFinder($finder);
+
+start(
+    "preprocess-watcher",
+    "PRE_DISABLE_AUTOLOAD=1 vendor/bin/aerys -d -c loader.php",
+    "aerys.log"
+);
+
+while (true) {
+    $watcher->findChanges();
+
+    if ($watcher->hasChanges()) {
+        $resources = array_merge(
+            $watcher->getNewResources(),
+            $watcher->getDeletedResources(),
+            $watcher->getUpdatedResources()
+        );
+
+        foreach ($resources as $resource) {
+            $pre = realpath($resource);
+            $php = preg_replace("/pre$/", "php", $pre);
+
+            print "Rebuilding {$pre}" . PHP_EOL;
+
+            Pre\Plugin\compile($pre, $php, true, true);
+        }
+
+        print "Restarting the server" . PHP_EOL;
+
+        stop("preprocess-watcher");
+
+        start(
+            "preprocess-watcher",
+            "PRE_DISABLE_AUTOLOAD=1 vendor/bin/aerys -d -c loader.php",
+            "aerys.log"
+        );
+    }
+
+    usleep(100000);
+}

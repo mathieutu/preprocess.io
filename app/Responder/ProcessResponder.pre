@@ -1,0 +1,20 @@
+<?php
+
+namespace Preprocess\Responder;
+
+use Aerys\Request;
+use Aerys\Response;
+
+class ProcessResponder
+{
+    use Responds;
+
+    public function run(Request $request, Response $response)
+    {
+        $parameters = await $this->parameters($request);
+
+        // TODO
+
+        await $this->respond($response, "ok");
+    }
+}

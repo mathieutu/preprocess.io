@@ -1,0 +1,10 @@
+vendor
+app/**/*.php
+scripts/*.php
+aerys.log
+pre.paths
+config.php
+helpers.php
+routes.php
+macros.php
+.env

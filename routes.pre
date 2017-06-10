@@ -1,0 +1,10 @@
+<?php
+
+use Aerys\Router;
+use Preprocess\Responder\IndexResponder;
+use Preprocess\Responder\ProcessResponder;
+
+return function (Router $router) {
+    // $router->get("/", IndexResponder->new()->closure());
+    $router->post("/process", ProcessResponder->new()->closure());
+};

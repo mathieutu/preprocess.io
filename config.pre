@@ -1,0 +1,17 @@
+<?php
+
+use Aerys\Host;
+use Aerys\Request;
+use Aerys\Response;
+
+use function Aerys\root;
+use function Aerys\router;
+
+$host = Host->new();
+$host->expose("*", 8888);
+
+$host->use($root = root(.."/public"));
+$host->use($router = router());
+
+$routes = process .."/routes.pre";
+$routes($router);
