@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "12ae3fa5be68965d338b0c5900c00968",
+    "content-hash": "c4c3e33f509987b4f3f677e3f6d0fd11",
     "packages": [
         {
             "name": "amphp/aerys",
@@ -1002,16 +1002,16 @@
         },
         {
             "name": "pre/collections",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/preprocess/pre-collections.git",
-                "reference": "57ce9f6a86c1d90692fae60951d07aad6999609d"
+                "reference": "2eb7e227fffdb231d8b7a4da28f8f8c7ca0ffc32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/preprocess/pre-collections/zipball/57ce9f6a86c1d90692fae60951d07aad6999609d",
-                "reference": "57ce9f6a86c1d90692fae60951d07aad6999609d",
+                "url": "https://api.github.com/repos/preprocess/pre-collections/zipball/2eb7e227fffdb231d8b7a4da28f8f8c7ca0ffc32",
+                "reference": "2eb7e227fffdb231d8b7a4da28f8f8c7ca0ffc32",
                 "shasum": ""
             },
             "require": {
@@ -1035,7 +1035,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2017-06-08T20:12:37+00:00"
+            "time": "2017-06-10T20:04:10+00:00"
         },
         {
             "name": "pre/plugin",
