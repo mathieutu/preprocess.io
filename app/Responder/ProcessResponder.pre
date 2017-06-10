@@ -4,6 +4,7 @@ namespace Preprocess\Responder;
 
 use Aerys\Request;
 use Aerys\Response;
+use Amp\Process;
 
 class ProcessResponder
 {
@@ -13,8 +14,52 @@ class ProcessResponder
     {
         $parameters = await $this->parameters($request);
 
-        // TODO
+        $payload = [];
+        $payload["compileResult"] = await $this->compile($parameters);
 
-        await $this->respond($response, "ok");
+        if ($payload["compileResult"]->stdout) {
+            $payload["executeResult"] = await $this->execute($payload["compileResult"]->stdout);
+        }
+
+        await $this->respond($response, "ok", $payload);
+    }
+
+    async private function compile($parameters)
+    {
+        $code = base64_encode($parameters["pre"]);
+
+        $expand = base64_encode("
+            require __DIR__ . '/vendor/autoload.php';
+            print Pre\\Plugin\\expand(base64_decode('{$code}'));
+        ");
+
+        $result = await $this->process($expand);
+
+        return $result;
+    }
+
+    async private function process($code)
+    {
+        print "CODE:" . PHP_EOL;
+        print $code . PHP_EOL;
+
+        $eval = "eval(base64_decode(\"{$code}\"));";
+
+        $command = "docker run preprocess timeout 5 php -r '{$eval}'";
+
+        $process = new Process($command);
+        $result = await $process->exec(Process::BUFFER_ALL);
+
+        return $result;
+    }
+
+    async private function execute($code)
+    {
+        $code = join("\n", array_slice(explode("\n", $code), 1));
+        $code = base64_encode($code);
+
+        $result = await $this->process($code);
+
+        return $result;
     }
 }

@@ -1,4 +1,5 @@
 vendor
+node_modules
 app/**/*.php
 scripts/*.php
 aerys.log
@@ -8,3 +9,4 @@ helpers.php
 routes.php
 macros.php
 .env
+mix-manifest.json
