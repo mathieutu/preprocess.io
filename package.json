@@ -11,9 +11,11 @@
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "bootstrap-sass": "^3.3.7",
     "laravel-mix": "^0.12.1",
     "lodash": "^4.17.4",
     "react": "^15.5.4",
+    "react-ace": "^5.0.1",
     "react-dom": "^15.5.4",
     "webpack": "^2.6.1"
   }

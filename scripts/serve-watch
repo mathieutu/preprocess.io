@@ -25,7 +25,7 @@ $watcher->setFinder($finder);
 
 start(
     "preprocess-watcher",
-    "PRE_DISABLE_AUTOLOAD=1 vendor/bin/aerys -d -c loader.php",
+    "PRE_DISABLE_AUTOLOAD=1 vendor/bin/aerys -d -c bootstrap/app.php",
     "aerys.log"
 );
 
@@ -54,7 +54,7 @@ while (true) {
 
         start(
             "preprocess-watcher",
-            "PRE_DISABLE_AUTOLOAD=1 vendor/bin/aerys -d -c loader.php",
+            "PRE_DISABLE_AUTOLOAD=1 vendor/bin/aerys -d -c bootstrap/app.php",
             "aerys.log"
         );
     }

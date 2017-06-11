@@ -1,4 +1,136 @@
-textarea {
-    width: 300px;
-    height: 150px;
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+    padding: 25px 0;
+}
+
+.editor {
+    background-color: #263238;
+    border-radius: 4px;
+
+    .ace_editor {
+        background-color: transparent !important;
+
+        .ace_gutter {
+            background-color: transparent !important;
+            border-right: none !important;
+        }
+
+        .ace_gutter-cell {
+            color: #4a5559 !important;
+        }
+
+        .ace_active-line, .ace_gutter-active-line {
+            background-color: #212b30 !important;
+        }
+
+        .ace_scroller {
+            bottom: 0 !important;
+            right: 0 !important;
+        }
+
+        .ace_scrollbar {
+            display: none;
+        }
+
+        .ace_variable {
+            color: #eeffff !important;
+        }
+
+        .ace_php_tag {
+            color: #8cddf2 !important;
+        }
+
+        .ace_identifier, .ace_class {
+            color: #eeffff !important;
+        }
+
+        .ace_string {
+            color: #c4e791 !important;
+        }
+
+        .ace_keyword {
+            color: #c694e8 !important;
+        }
+
+        .ace_function {
+            color: #84acfc !important;
+        }
+
+        .ace_escape {
+            color: #8cddf2 !important;
+        }
+
+        .ace_selection {
+            background-color: #3c4d56 !important;
+        }
+
+        .ace_fold-widget {
+            display: none !important;
+        }
+
+        .ace_cursor {
+            border-left-color: #159588 !important;
+        }
+
+        .ace_bracket {
+            display: none !important;
+        }
+
+        .ace_constant {
+            color: #ee727a !important;
+        }
+    }
+
+    .controls {
+        font-size: 0;
+
+        .control-close, .control-minimise, .control-maximise {
+            width: 12px;
+            height: 12px;
+            margin-top: 16px;
+            margin-right: 0;
+            margin-bottom: 12px;
+            margin-left: 16px;
+            border-radius: 100%;
+            display: inline-block;
+        }
+
+        .control-close {
+            background-color: #fc615d;
+        }
+
+        .control-minimise {
+            background-color: #fdbc40;
+        }
+
+        .control-maximise {
+            background-color: #34c84a;
+        }
+    }
+
+    .tabs {
+        margin-bottom: 8px;
+
+        button {
+            border-top: 0;
+            border-right: 0;
+            border-bottom: solid 2px transparent;
+            border-left: 0;
+            padding: 0 12px;
+            height: 40px;
+            line-height: 40px;
+            background-color: transparent;
+            outline: none;
+            width: 150px;
+            text-align: left;
+            color: #eeffff;
+            font-size: 12px;
+            cursor: pointer;
+
+            &.selected {
+                border-bottom-color: #009688;
+            }
+        }
+    }
 }

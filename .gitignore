@@ -1,4 +1,5 @@
 vendor
+fonts
 node_modules
 app/**/*.php
 scripts/*.php

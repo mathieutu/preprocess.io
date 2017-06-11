@@ -26,7 +26,8 @@ class ProcessResponder
 
     async private function compile($parameters)
     {
-        $code = base64_encode($parameters["pre"] . ";");
+        $code = trim($parameters["code"]);
+        $code = base64_encode($code);
 
         $expand = base64_encode("
             require __DIR__ . '/vendor/autoload.php';
@@ -53,7 +54,7 @@ class ProcessResponder
     async private function execute($code)
     {
         $code = join("\n", array_slice(explode("\n", $code), 1));
-        $code = base64_encode("require __DIR__ . '/vendor/autoload.php';" . $code . ";");
+        $code = base64_encode("require __DIR__ . '/vendor/autoload.php';" . $code);
 
         $result = await $this->process($code);
 

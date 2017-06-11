@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "serve": "aerys -d -c loader.php",
+        "serve": "aerys -d -c bootstrap/app.php",
         "serve:watch": "scripts/serve-watch",
         "build": "docker build -t preprocess ."
     },
