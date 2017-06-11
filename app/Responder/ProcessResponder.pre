@@ -26,7 +26,7 @@ class ProcessResponder
 
     async private function compile($parameters)
     {
-        $code = base64_encode($parameters["pre"]);
+        $code = base64_encode($parameters["pre"] . ";");
 
         $expand = base64_encode("
             require __DIR__ . '/vendor/autoload.php';
@@ -40,9 +40,6 @@ class ProcessResponder
 
     async private function process($code)
     {
-        print "CODE:" . PHP_EOL;
-        print $code . PHP_EOL;
-
         $eval = "eval(base64_decode(\"{$code}\"));";
 
         $command = "docker run preprocess timeout 5 php -r '{$eval}'";
@@ -56,7 +53,7 @@ class ProcessResponder
     async private function execute($code)
     {
         $code = join("\n", array_slice(explode("\n", $code), 1));
-        $code = base64_encode($code);
+        $code = base64_encode("require __DIR__ . '/vendor/autoload.php';" . $code . ";");
 
         $result = await $this->process($code);
 

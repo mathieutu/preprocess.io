@@ -23,7 +23,7 @@ class App extends Component {
 
         const result = await response.json()
 
-        this.refs.php.value = result.data.compileResult.stdout
+        this.refs.php.value = result.data.compileResult.stdout.replace(/[;;]\s*$/, ";");
 
         if (result.data.executeResult) {
             this.refs.output.value = result.data.executeResult.stdout
