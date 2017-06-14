@@ -1,12 +1,10 @@
 import React, { Component } from "react"
 import { render } from "react-dom"
-
 import AceEditor from "react-ace"
-
+import lettera from "lettera"
+import examples from "./examples"
 import "brace/mode/php"
 import "brace/theme/chaos"
-
-import lettera from "lettera"
 
 const encode = data => Object.keys(data).map((key) =>
     encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
@@ -16,30 +14,6 @@ const decode = (value) => {
     const document = new DOMParser().parseFromString(value, "text/html")
     return document.documentElement.textContent
 }
-
-const examples = [
-    `<?php
-
-use Carbon\\Carbon;
-
-$user = {
-    "email" => "cgpitt@gmail.com",
-    "twitter" => "assertchris",
-    "password" => "R3a77y.53cuRe!",
-    "created_at" => "2017-01-01 00:00:00",
-    "updated_at" => "2017-01-07 00:00:00",
-}
-    ->map(($value, $key) => {
-        return preg_match("/_at$/", $key)
-            ? new Carbon($value)
-            : $value;
-    })
-    ->filter(($value, $key) => {
-        return $key !== "password";
-    });
-
-var_dump($user->toArray());`
-]
 
 class App extends Component {
     constructor(...params) {
@@ -57,6 +31,8 @@ class App extends Component {
     }
 
     type() {
+        const example = examples[Math.floor(Math.random() * examples.length)]
+
         this.setState({
             "tab": 0,
             "isShowingExample": true,
@@ -66,7 +42,7 @@ class App extends Component {
 
         let effect = lettera.init({
             "element": element,
-            "string": examples[0],
+            "string": example,
             "maxDelay": 30,
         })
 
@@ -81,7 +57,7 @@ class App extends Component {
         }, 50)
 
         const checkInterval = setInterval(() => {
-            if (examples[0].trim().length <= this.state.code.trim().length) {
+            if (example.trim().length <= this.state.code.trim().length) {
                 clearTimeout(typeInterval)
                 clearTimeout(checkInterval)
 
@@ -208,7 +184,7 @@ class App extends Component {
                                                     "fontFamily": "Fira Mono",
                                                 })
 
-                                                editor.container.style.lineHeight = 2
+                                                editor.container.style.lineHeight = 1.65
                                                 editor.renderer.updateFontSize()
 
                                                 this.editor = editor
@@ -233,7 +209,7 @@ class App extends Component {
                                                     "fontFamily": "Fira Mono",
                                                 })
 
-                                                editor.container.style.lineHeight = 2
+                                                editor.container.style.lineHeight = 1.65
                                                 editor.renderer.updateFontSize()
                                             }}
                                         />
@@ -256,7 +232,7 @@ class App extends Component {
                                                     "fontFamily": "Fira Mono",
                                                 })
 
-                                                editor.container.style.lineHeight = 2
+                                                editor.container.style.lineHeight = 1.65
                                                 editor.renderer.updateFontSize()
                                             }}
                                         />

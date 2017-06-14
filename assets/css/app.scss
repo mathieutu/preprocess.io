@@ -13,9 +13,9 @@ body {
 }
 
 .header {
-    line-height: 2;
     background-color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    padding: 15px 0;
     border-bottom: solid 3px darken(#697BA1, 10);
 
     h1 {
@@ -110,7 +110,7 @@ body {
             height: 12px;
             margin-top: 16px;
             margin-right: 0;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             margin-left: 16px;
             border-radius: 100%;
             display: inline-block;
@@ -158,7 +158,7 @@ body {
         position: absolute;
         bottom: 15px;
         right: 15px;
-        padding: 20px;
+        padding: 15px 20px;
         border-radius: 2px;
         color: darken(#FFCE7B, 60);
         background-color: #FFCE7B;
@@ -169,14 +169,14 @@ body {
 
 .buttons {
     text-align: center;
-    margin: 10px 0;
+    margin: 15px 0;
 
     button {
         border-radius: 2px;
         border: none;
         outline: none;
         margin: 10px;
-        padding: 20px;
+        padding: 15px 20px;
         font-size: 20px;
         font-weight: bold;
         text-transform: uppercase;
