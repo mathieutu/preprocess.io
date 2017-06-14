@@ -1,12 +1,39 @@
+$icon-font-path: "/fonts/bootstrap/";
+
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 body {
-    padding: 25px 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    background-image: url("/img/space.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+    min-width: 180px;
+}
+
+.header {
+    line-height: 2;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-bottom: solid 3px darken(#697BA1, 10);
+
+    h1 {
+        background-color: darken(#697BA1, 10);
+        color: transparent;
+        text-shadow: 0 2px 3px rgba(255, 255, 255, 0);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        font-size: 26;
+        font-weight: bold;
+    }
 }
 
 .editor {
     background-color: #263238;
     border-radius: 4px;
+    position: relative;
 
     .ace_editor {
         background-color: transparent !important;
@@ -127,6 +154,50 @@ body {
             &.selected {
                 border-bottom-color: #009688;
             }
+        }
+    }
+
+    .tab-warning {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        padding: 20px;
+        border-radius: 2px;
+        color: darken(#FFCE7B, 60);
+        background-color: #FFCE7B;
+        box-shadow: 0 2px 0 3px darken(#FFCE7B, 10);
+        z-index: 10;
+    }
+}
+
+.buttons {
+    text-align: center;
+    margin: 10px 0;
+
+    button {
+        border-radius: 2px;
+        border: none;
+        outline: none;
+        margin: 10px;
+        padding: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        &.example {
+            color: lighten(#697BA1, 60);
+            background-color: #697BA1;
+            box-shadow: 0 2px 0 3px darken(#697BA1, 10);
+        }
+
+        &.process {
+            color: lighten(#697BA1, 60);
+            background-color: #697BA1;
+            box-shadow: 0 2px 0 3px darken(#697BA1, 10);
+        }
+
+        &.busy {
+            opacity: 0.5;
         }
     }
 }
