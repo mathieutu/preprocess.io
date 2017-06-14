@@ -33,15 +33,11 @@ body {
             display: none;
         }
 
-        .ace_variable {
-            color: #eeffff !important;
-        }
-
         .ace_php_tag {
             color: #8cddf2 !important;
         }
 
-        .ace_identifier, .ace_class {
+        .ace_identifier, .ace_class, .ace_line, .ace_variable, .ace_paren {
             color: #eeffff !important;
         }
 
