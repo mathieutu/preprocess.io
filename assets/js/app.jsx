@@ -5,6 +5,7 @@ import lettera from "lettera"
 import examples from "./examples"
 import "brace/mode/php"
 import "brace/theme/chaos"
+import "babel-polyfill"
 
 const encode = data => Object.keys(data).map((key) =>
     encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
