@@ -19,14 +19,11 @@ body {
     border-bottom: solid 3px darken(#697BA1, 10);
 
     h1 {
-        background-color: darken(#697BA1, 10);
-        color: transparent;
-        text-shadow: 0 2px 3px rgba(255, 255, 255, 0);
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        background-clip: text;
-        font-size: 26;
+        color: darken(#697BA1, 10);
+        font-size: 32px;
         font-weight: bold;
+        margin: 0;
+        padding: 0;
     }
 }
 
@@ -199,5 +196,22 @@ body {
         &.busy {
             opacity: 0.5;
         }
+    }
+}
+
+.content {
+    line-height: 2;
+    background-color: #fff;
+    margin-top: 20px;
+    border-top: solid 3px darken(#697BA1, 10);
+    padding: 15px 0;
+    font-size: 15px;
+
+    h2 {
+        color: darken(#697BA1, 10);
+        font-size: 22px;
+        font-weight: bold;
+        margin: 0 0 15px 0;
+        padding: 0;
     }
 }

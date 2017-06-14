@@ -159,7 +159,7 @@ class App extends Component {
                 <div className="header">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-12">
+                            <div className="col-sm-12">
                                 <h1>Pre.</h1>
                             </div>
                         </div>
@@ -168,7 +168,7 @@ class App extends Component {
                 <div className="feature">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-12">
+                            <div className="col-sm-12">
                                 <div className="editor">
                                     {this.state.showTabWarning && (
                                         <div className="tab-warning">
@@ -271,6 +271,19 @@ class App extends Component {
                                     </button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="content">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <h2>What is Pre?</h2>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-6">Pre is a PHP preprocessor, designed to make adding new syntax effortless. It's also a collection of pre-built macros, which we use because they make our code clearer and simpler.</div>
+                            <div className="col-sm-6">If you've ever wanted to use your own syntax, but stopped short of building your own compiler: Pre is for you. It requires no extensions or configuration. It's 100% opt-in and produces valid PHP.</div>
                         </div>
                     </div>
                 </div>
