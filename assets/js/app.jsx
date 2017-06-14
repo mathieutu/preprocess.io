@@ -239,10 +239,10 @@ class App extends Component {
                                     )}
                                 </div>
                                 <div className="buttons">
-                                    <button className={this.state.isShowingExample ? "example busy" : "example"} disabled={this.state.isShowingExample} onClick={e => this.type()}>
+                                    <button className={this.state.isShowingExample ? "example busy" : "example"} disabled={this.state.isShowingExample || this.state.isProcessing} onClick={e => this.type()}>
                                         {this.state.isShowingExample ? "Showing..." : "Show me an example"}
                                     </button>
-                                    <button className={this.state.isProcessing ? "process busy" : "process"} disabled={this.state.isProcessing} onClick={e => this.process()}>
+                                    <button className={this.state.isProcessing ? "process busy" : "process"} disabled={this.state.isShowingExample || this.state.isProcessing} onClick={e => this.process()}>
                                         {this.state.isProcessing ? "Processing..." : "Process my code"}
                                     </button>
                                 </div>
