@@ -29,7 +29,7 @@ export default (props) => {
     }
 
     return (
-        <div className={className} {...next}>
+        <div className={className.trim()} {...next}>
             {next.children}
         </div>
     )
