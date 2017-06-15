@@ -274,7 +274,16 @@ class App extends Component {
                         <hr />
                         <div className="row">
                             <div className="col-sm-12">
-                                <h2>Short Closures</h2>
+                                <ol>
+                                    <li><a href="#short-closures">Short Closures</a></li>
+                                    <li>More to come...</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <hr />
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <h2 id="short-closures">Short Closures</h2>
                             </div>
                         </div>
                         <div className="row">
@@ -285,27 +294,69 @@ class App extends Component {
                         </div>
                         <div className="row">
                             <div className="col-sm-12">
-                                <code>composer require pre/short-closures</code>
+                                <div className="code-wrapper">
+                                    <code>{`composer require pre/short-closures`}</code>
+                                </div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-sm-12">Then, use them in your code:</div>
                         </div>
                         <div className="row">
-                            <code>{`$fruit = ["apple", "orange", "pear"];
+                            <div className="col-sm-12">
+                                <div className="code-wrapper">
+                                    <code dangerouslySetInnerHTML={{__html: `
+$fruit = ["apple", "orange", "pear"];
 
 $exclude = ["orange"];
 $amplify = ["pear"];
 
-$amplified = array_map(($fruit) => \{
+$amplified = array_map(<strong>($fruit) => {
     return in_array($fruit, $amplify)
         ? strtoupper($fruit)
         : $fruit;
-\});
+}</strong>, $fruit);
 
-$filtered = array_filter($amplifed, ($fruit) => \{
+$filtered = array_filter($amplifed, <strong>($fruit) => {
     return !in_array($fruit, $exclude);
-\});`}</code>
+}</strong>);
+                                    `.trim()}} />
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-12">This compiles to code resembling:</div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-12">
+                                    <div className="code-wrapper">
+                                        <code dangerouslySetInnerHTML={{__html: `
+$fruit = ["apple", "orange", "pear"];
+
+$exclude = ["orange"];
+$amplify = ["pear"];
+
+$amplified = array_map(<strong>[
+    $amplify = $amplify ?? null,
+    "fn" => function ($fruit) use (&$amplify) {
+        return in_array($fruit, $amplify)
+            ? strtoupper($fruit)
+            : $fruit;
+    }
+]["fn"]</strong>, $fruit);
+
+$filtered = array_filter($amplifed, <strong>[
+    $exclude = $exclude ?? null,
+    "fn" => function ($fruit) use (&$exclude) {
+        return !in_array($fruit, $exclude);
+    }
+]["fn"]</strong>);
+                                        `.trim()}} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-12">If no variables are bound, a normal function is returned. So you don't pay the cost of automatically binding variables if you don't use them. </div>
+                            </div>
                         </div>
                     </div>
                 </div>
