@@ -262,6 +262,51 @@ class App extends Component {
                             <div className="col-sm-6">Pre is a PHP preprocessor, designed to make adding new syntax effortless. It's also a collection of pre-built macros, which we use because they make our code clearer and simpler.</div>
                             <div className="col-sm-6">If you've ever wanted to use your own syntax, but stopped short of building your own compiler: Pre is for you. It requires no extensions or configuration. It's 100% opt-in and produces valid PHP.</div>
                         </div>
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <h2>How do I use Pre?</h2>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-6">Pre libraries are installed with <a href="https://getcomposer.org">Composer</a>. PHP files can be preprocessed by changing their extension to <code>.pre</code> (for PSR-4 auto-loaded files), or by calling <code>Pre\Plugin\process("file.pre")</code>.</div>
+                            <div className="col-sm-6">New syntax is defined, in macro files, which Pre plugins automatically register. You can add your own macro files, by calling <code>Pre\Plugin\addMacroPath("macros.yay")</code>.</div>
+                        </div>
+                        <hr />
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <h2>Short Closures</h2>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12">PHP functions are verbose. This makes functional programming less attractive, and adds variable scope complexity. Pre short closures look like Javascript arrow functions but they differ slightly due to how PHP handles <code>$this</code>.</div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12">The automatically bind external variables (by reference). To install the short closures syntax, use:</div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <code>composer require pre/short-closures</code>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12">Then, use them in your code:</div>
+                        </div>
+                        <div className="row">
+                            <code>{`$fruit = ["apple", "orange", "pear"];
+
+$exclude = ["orange"];
+$amplify = ["pear"];
+
+$amplified = array_map(($fruit) => \{
+    return in_array($fruit, $amplify)
+        ? strtoupper($fruit)
+        : $fruit;
+\});
+
+$filtered = array_filter($amplifed, ($fruit) => \{
+    return !in_array($fruit, $exclude);
+\});`}</code>
+                        </div>
                     </div>
                 </div>
             </div>

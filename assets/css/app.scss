@@ -169,17 +169,19 @@ body {
 
 .buttons {
     text-align: center;
-    margin: 15px 0;
+    font-size: 0;
+    padding: 15px 0 3px 0;
 
     button {
         border-radius: 2px;
         border: none;
         outline: none;
-        margin: 10px;
+        margin: 0 10px 18px 10px;
         padding: 15px 20px;
         font-size: 20px;
         font-weight: bold;
         text-transform: uppercase;
+        display: inline-block;
 
         &.example {
             color: lighten(#697BA1, 60);
@@ -202,16 +204,31 @@ body {
 .content {
     line-height: 2;
     background-color: #fff;
-    margin-top: 20px;
     border-top: solid 3px darken(#697BA1, 10);
-    padding: 15px 0;
+    padding: 0 0 15px 0;
     font-size: 15px;
+
+    a {
+        text-decoration: underline;
+        color: darken(#697BA1, 20);
+    }
+
+    hr {
+        background-color: darken(#697BA1, 20);
+        margin: 30px 0 0 0;
+    }
 
     h2 {
         color: darken(#697BA1, 10);
         font-size: 22px;
         font-weight: bold;
-        margin: 0 0 15px 0;
+        margin: 33px 0 15px 0;
         padding: 0;
+    }
+
+    code {
+        background-color: lighten(#697BA1, 30);
+        color: darken(#697BA1, 20);
+        word-wrap: break-word;
     }
 }
