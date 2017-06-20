@@ -1,0 +1,24 @@
+<?php
+
+namespace Preprocess\Responder;
+
+use Aerys\Request;
+use Aerys\Response;
+
+use function Amp\File\get;
+
+class EmbedResponder
+{
+    use Responds;
+
+    public function run(Request $request, Response $response)
+    {
+        static $contents;
+
+        if (!$contents) {
+            $contents = await get(BASE_PATH . "/public/embed.html");
+        }
+
+        $response->end($contents);
+    }
+}

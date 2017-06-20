@@ -2,9 +2,11 @@
 
 use Aerys\Router;
 use Preprocess\Responder\IndexResponder;
+use Preprocess\Responder\EmbedResponder;
 use Preprocess\Responder\ProcessResponder;
 
 return function (Router $router) {
     $router->get("/", IndexResponder->new()->closure());
+    $router->get("/embed", EmbedResponder->new()->closure());
     $router->post("/process", ProcessResponder->new()->closure());
 };

@@ -1,0 +1,193 @@
+body {
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    min-width: 180px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.app {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.editor {
+    background-color: #263238;
+    border-radius: 4px;
+    position: relative;
+
+    .ace_editor {
+        background-color: transparent !important;
+
+        .ace_gutter {
+            background-color: transparent !important;
+            border-right: none !important;
+        }
+
+        .ace_gutter-cell {
+            color: #4a5559 !important;
+        }
+
+        .ace_active-line, .ace_gutter-active-line {
+            background-color: #212b30 !important;
+        }
+
+        .ace_scroller {
+            bottom: 0 !important;
+            right: 0 !important;
+        }
+
+        .ace_scrollbar {
+            display: none;
+        }
+
+        .ace_php_tag {
+            color: #8cddf2 !important;
+        }
+
+        .ace_identifier, .ace_class, .ace_line, .ace_variable, .ace_paren {
+            color: #eeffff !important;
+        }
+
+        .ace_string {
+            color: #c4e791 !important;
+        }
+
+        .ace_keyword {
+            color: #c694e8 !important;
+        }
+
+        .ace_function {
+            color: #84acfc !important;
+        }
+
+        .ace_escape {
+            color: #8cddf2 !important;
+        }
+
+        .ace_selection {
+            background-color: #3c4d56 !important;
+        }
+
+        .ace_fold-widget {
+            display: none !important;
+        }
+
+        .ace_cursor {
+            border-left-color: #159588 !important;
+        }
+
+        .ace_bracket {
+            display: none !important;
+        }
+
+        .ace_constant {
+            color: #ee727a !important;
+        }
+    }
+
+    .controls {
+        font-size: 0;
+
+        .control-close, .control-minimise, .control-maximise {
+            width: 12px;
+            height: 12px;
+            margin-top: 16px;
+            margin-right: 0;
+            margin-bottom: 8px;
+            margin-left: 16px;
+            border-radius: 100%;
+            display: inline-block;
+        }
+
+        .control-close {
+            background-color: #fc615d;
+        }
+
+        .control-minimise {
+            background-color: #fdbc40;
+        }
+
+        .control-maximise {
+            background-color: #34c84a;
+        }
+    }
+
+    .tabs {
+        margin-bottom: 8px;
+
+        button {
+            border-top: 0;
+            border-right: 0;
+            border-bottom: solid 2px transparent;
+            border-left: 0;
+            padding: 0 12px;
+            height: 40px;
+            line-height: 40px;
+            background-color: transparent;
+            outline: none;
+            width: 150px;
+            text-align: left;
+            color: #eeffff;
+            font-size: 12px;
+            cursor: pointer;
+
+            &.selected {
+                border-bottom-color: #009688;
+            }
+        }
+    }
+
+    .tab-warning {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        padding: 15px 20px;
+        border-radius: 2px;
+        color: darken(#FFCE7B, 60);
+        background-color: #FFCE7B;
+        box-shadow: 0 2px 0 3px darken(#FFCE7B, 10);
+        z-index: 10;
+    }
+}
+
+.buttons {
+    text-align: center;
+    font-size: 0;
+    padding: 15px 0 3px 0;
+
+    button {
+        border-radius: 2px;
+        border: none;
+        outline: none;
+        margin: 0 10px 18px 10px;
+        padding: 15px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: inline-block;
+
+        &.example {
+            color: lighten(#697BA1, 60);
+            background-color: #697BA1;
+            box-shadow: 0 2px 0 3px darken(#697BA1, 10);
+        }
+
+        &.process {
+            color: lighten(#697BA1, 60);
+            background-color: #697BA1;
+            box-shadow: 0 2px 0 3px darken(#697BA1, 10);
+        }
+
+        &.busy {
+            opacity: 0.5;
+        }
+    }
+}
