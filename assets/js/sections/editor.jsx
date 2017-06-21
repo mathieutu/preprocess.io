@@ -153,6 +153,9 @@ export default class extends Component {
                         <div className="tabs">
                             <button className={this.state.tab === 0 ? "selected" : ""} onClick={e => this.setState({ "tab": 0, "showTabWarning": false })}>
                                 code.pre
+                                {this.state.isProcessing && (
+                                  <span className="indicator"></span>
+                                )}
                             </button>
                             <button className={this.state.tab === 1 ? "selected" : ""} onClick={e => this.setState({ "tab": 1 })}>
                                 code.php

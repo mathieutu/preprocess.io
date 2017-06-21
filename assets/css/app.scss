@@ -147,9 +147,20 @@ body {
             color: #eeffff;
             font-size: 12px;
             cursor: pointer;
+            position: relative;
 
             &.selected {
                 border-bottom-color: #009688;
+            }
+
+            .indicator {
+                border: solid 2px #009688;
+                width: 8px;
+                height: 8px;
+                border-radius: 100%;
+                position: absolute;
+                top: 16px;
+                right: 16px;
             }
         }
     }

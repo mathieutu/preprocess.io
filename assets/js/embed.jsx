@@ -11,7 +11,7 @@ const container = document.querySelector(".app")
 const rect = container.getBoundingClientRect()
 
 const App = () => (
-    <EditorSection hideButtons width={rect.width} height={rect.height - 100} />
+    <EditorSection hideButtons width={rect.width} height={rect.height - 84} />
 )
 
 render(<App />, container)
