@@ -12,6 +12,7 @@
         "pre/async": "^0.7.2",
         "pre/class-accessors": "^0.6.4",
         "pre/collections": "^0.2.2",
+        "pre/deferred": "^0.4.1",
         "pre/short-closures": "^0.5.2",
         "vlucas/phpdotenv": "^2.4"
     },
