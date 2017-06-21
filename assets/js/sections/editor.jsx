@@ -30,9 +30,11 @@ export default class extends Component {
             "code": window.location.hash ? atob(window.location.hash.substr(1)) : "<?php\n\n",
             "compiled": "",
             "executed": "",
+            "encoded": "",
             "isProcessing": false,
             "isShowingExample": false,
             "showTabWarning": false,
+            "showEncodedTab": false,
         }
     }
 
@@ -117,13 +119,23 @@ export default class extends Component {
             }
 
             if ((e.key == "s" || e.key == "S" ) && (e.ctrlKey || e.metaKey)) {
-                e.preventDefault()
                 this.process()
+                e.preventDefault()
                 return false
+            }
+
+            if (e.key === "Alt") {
+                this.setState({ "showEncodedTab": true })
             }
 
             return true
         })
+
+        window.addEventListener("keyup", e => {
+            if (e.key === "Alt") {
+                this.setState({ "showEncodedTab": false })
+            }
+        });
     }
 
     render() {
@@ -163,6 +175,11 @@ export default class extends Component {
                             <button className={this.state.tab === 2 ? "selected" : ""} onClick={e => this.setState({ "tab": 2 })}>
                                 output
                             </button>
+                            {this.state.showEncodedTab && (
+                                <button onClick={e => this.setState({ "tab": 3 })}>
+                                    encoded
+                                </button>
+                            )}
                         </div>
                         {this.state.tab === 0 && (
                             <AceEditor
@@ -170,7 +187,10 @@ export default class extends Component {
                                 mode="php"
                                 theme="chaos"
                                 value={this.state.code}
-                                onChange={code => this.setState({ code })}
+                                onChange={code => this.setState({
+                                  code,
+                                  "encoded": btoa(code),
+                                })}
                                 editorProps={props}
                                 showPrintMargin={false}
                                 fontSize={16}
@@ -225,6 +245,27 @@ export default class extends Component {
                                 onLoad={editor => {
                                     editor.setReadOnly(true)
 
+                                    editor.setOptions({
+                                        "fontFamily": "Fira Mono",
+                                    })
+
+                                    editor.container.style.lineHeight = 1.65
+                                    editor.renderer.updateFontSize()
+                                }}
+                            />
+                        )}
+                        {this.state.tab === 3 && (
+                            <AceEditor
+                                focus={true}
+                                mode="text"
+                                theme="chaos"
+                                value={this.state.encoded}
+                                editorProps={props}
+                                showPrintMargin={false}
+                                fontSize={16}
+                                style={style}
+                                lineHeight={2}
+                                onLoad={editor => {
                                     editor.setOptions({
                                         "fontFamily": "Fira Mono",
                                     })
