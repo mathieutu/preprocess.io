@@ -41,7 +41,11 @@ const App = () => (
                 <hr />
                 <LinksSection />
                 <hr />
-                <ShortClosuresMacro />
+                <Row>
+                    <Column sm="12" md="6">
+                        <ShortClosuresMacro />
+                    </Column>
+                </Row>
             </Container>
         </div>
     </div>
