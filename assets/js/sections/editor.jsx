@@ -27,7 +27,7 @@ export default class extends Component {
 
         this.state = {
             "tab": 0,
-            "code": "<?php\n\n",
+            "code": window.location.hash ? atob(window.location.hash.substr(1)) : "<?php\n\n",
             "compiled": "",
             "executed": "",
             "isProcessing": false,
