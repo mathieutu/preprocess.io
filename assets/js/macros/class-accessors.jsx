@@ -12,46 +12,46 @@ composer require pre/class-accessors
 
 const example1Before = `
 class Money {
-    private string $currency {
+    <strong>private string $currency {
         get;
 
-        immutable set {
+        immutable set {</strong>
             if (!in_array($value, ["USD"])) {
                 throw new InvalidArgumentException();
             }
 
             $this->currency = $value;
-        }
+        <strong>}
 
         immutable unset;
-    }
+    }</strong>
 
-    private float $amount {
+    <strong>private float $amount {
         get; immutable set; immutable unset;
-    }
+    }</strong>
 }
 `
 
 const example1After = `
 class Money {
-    use \\Pre\\ClassAccessors\\ClassAccessorsTrait;
+    <strong>use \\Pre\\ClassAccessors\\ClassAccessorsTrait;</strong>
 
     private $currency;
 
-    public function getCurrency():string {
+    <strong>public function getCurrency():string {
         return $this->currency;
     }
 
     public function withCurrency(string $value) {
         $clone = clone $this;
 
-        $bound = \\Closure::bind(function() use ($value) {
+        $bound = \\Closure::bind(function() use ($value) {</strong>
             if (!in_array($value, ["USD"])) {
                 throw new InvalidArgumentException();
             }
 
             $this->currency = $value;
-        }, $clone);
+        <strong>}, $clone);
 
         $bound();
 
@@ -62,11 +62,11 @@ class Money {
         $clone = clone($this);
         unset($clone->currency);
         return $clone;
-    }
+    }</strong>
 
     private $amount;
 
-    public function getAmount():float {
+    <strong>public function getAmount():float {
         return $this->amount;
     }
 
@@ -80,7 +80,7 @@ class Money {
         $clone = clone($this);
         unset($clone->amount);
         return $clone;
-    }
+    }</strong>
 }
 `
 

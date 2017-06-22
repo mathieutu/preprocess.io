@@ -93,7 +93,7 @@ macro {
 $columns = ["email", "password"];
 $placeholders = [":email", ":password"];
 
-var_dump("INSERT INTO users (%s) VALUES (%s)" % [$columns, $placeholders]);`,
+var_dump("INSERT INTO users (%s) VALUES (%s)" % [join(", ", $columns), join(", ", $placeholders)]);`,
 `<?php
 
 print "first" . PHP_EOL;
@@ -113,5 +113,40 @@ immutable class Money {
 $old = new Money();
 $new = $old->withCurrency("USD");
 
-var_dump($old !== $new);`
+var_dump($old !== $new);`,
+`<?php
+
+class Proxy {
+    private $factory = app("factory");
+
+    private $formatter = new ProxyFormatter("default");
+
+    public function execute() {
+        $instance = $this->factory->make();
+        return $this->formatter->format($instance->execute());
+    }
+}`,
+`<?php
+
+class Proxy {
+    private $factory;
+
+    private $formatter;
+
+    public function __construct(
+        <strong>Factory $factory = app("factory"),
+        Formatter $formatter = new ProxyFormatter("default")</strong>
+    ) {
+        $this->factory = $factory;
+        $this->formatter = $formatter;
+    }
+}`,
+`<?php
+
+var_dump(
+    "one",
+    "two",
+    "three",
+);
+`
 ]

@@ -1,10 +1,11 @@
 import React from "react"
 
 export default (props) => {
-    let className = ""
-
     const sizes = ["xs", "sm", "md", "lg"]
     const next = Object.assign({}, props)
+
+    let className = props.className || ""
+    delete next.className
 
     let sized = false
 

@@ -11,11 +11,19 @@ composer require pre/trailing-commas
 `
 
 const example1Before = `
-
+var_dump(
+    "one",
+    "two",
+    "three"<strong>,</strong>
+);
 `
 
 const example1After = `
-
+var_dump(
+    "one",
+    "two",
+    "three"
+);
 `
 
 export default () => (

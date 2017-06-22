@@ -13,9 +13,9 @@ composer require pre/deferred
 const example1Before = `
 print "first" . PHP_EOL;
 
-defer {
+<strong>defer {</strong>
     print "last" . PHP_EOL;
-}
+<strong>}</strong>
 
 print "in between" . PHP_EOL;
 `
@@ -23,14 +23,14 @@ print "in between" . PHP_EOL;
 const example1After = `
 print "first" . PHP_EOL;
 
-$deferred·cfcd2084 = new \\Pre\\Deferred\\Deferred(
+<strong>$deferred·cfcd2084 = new \\Pre\\Deferred\\Deferred(
     call_user_func(function($context·cfcd2084) {
         return function() use ($context·cfcd2084) {
-            extract($context·cfcd2084);
+            extract($context·cfcd2084);</strong>
             print "last" . PHP_EOL;
-        };
+        <strong>};
     } , get_defined_vars())
-);
+);</strong>
 
 print "in between" . PHP_EOL;
 `

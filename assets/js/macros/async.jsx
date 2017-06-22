@@ -11,8 +11,8 @@ composer require pre/async
 `
 
 const example1Before = `
-async function highlightFileContents($path) {
-    $source = await Amp\\File\\get($path);
+<strong>async</strong> function highlightFileContents($path) {
+    $source = <strong>await</strong> Amp\\File\\get($path);
     return highlight_string($source, true);
 }
 
@@ -21,14 +21,14 @@ var_dump($highlighted);
 `
 
 const example1After = `
-function highlightFileContents($path): \\Amp\\Promise {
-    return call_user_func(
+function highlightFileContents($path): <strong>\\Amp\\Promise</strong> {
+    return <strong>call_user_func(
         PRE_ASYNC_WRAPPER,
-        function() use (&$path) {
+        function() use (&$path) {</strong>
             $source = yield Amp\\File\\get($path);
             return highlight_string($source, true);
-        }
-    );
+        <strong>}
+    );</strong>
 }
 
 $highlighted = Amp\\wait(highlightFileContents("helpers.php"));

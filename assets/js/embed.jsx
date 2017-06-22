@@ -1,7 +1,7 @@
+import "babel-polyfill"
+
 import React, { Component } from "react"
 import { render } from "react-dom"
-
-import "babel-polyfill"
 
 import {
     Editor as EditorSection,

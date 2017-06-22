@@ -11,27 +11,27 @@ composer require pre/immutable-classes
 `
 
 const example1Before = `
-immutable class Money {
+<strong>immutable</strong> class Money {
     private $currency;
     private $amount;
 }
 
 $old = new Money();
-$new = $old->withCurrency("USD");
+$new = <strong>$old->withCurrency("USD")</strong>;
 
 var_dump($old !== $new);
 `
 
 const example1After = `
-class Money   {
-    use \\Pre\\ImmutableClasses\\ImmutableClassesTrait;
+class Money {
+    <strong>use \\Pre\\ImmutableClasses\\ImmutableClassesTrait;</strong>
 
     private $currency;
     private $amount;
 }
 
 $old = new Money();
-$new = $old->withCurrency("USD");
+$new = <strong>$old->withCurrency("USD")</strong>;
 
 var_dump($old !== $new);
 `

@@ -1,7 +1,8 @@
+import "babel-polyfill"
+
 import React, { Component } from "react"
 import { render } from "react-dom"
-
-import "babel-polyfill"
+import FontAwesome from "react-fontawesome"
 
 import {
     Column,
@@ -33,8 +34,22 @@ const App = () => (
         <div className="header">
             <Container>
                 <Row>
-                    <Column>
+                    <Column xs="8">
                         <h1>Pre.</h1>
+                    </Column>
+                    <Column xs="4" className="text-right">
+                        <a href="https://github.com/preprocess">
+                            <FontAwesome
+                                name="github"
+                                size="2x"
+                            />
+                        </a>
+                        <a href="https://twitter.com/assertchris">
+                            <FontAwesome
+                                name="twitter"
+                                size="2x"
+                            />
+                        </a>
                     </Column>
                 </Row>
             </Container>

@@ -11,39 +11,39 @@ composer require pre/collections
 `
 
 const example1Before = `
-$user = {
+$user = <strong>{
     "email" => "cgpitt@gmail.com",
     "password" => "R3a77y.53cuRe!",
     "created_at" => "2017-01-01 00:00:00",
 }
-    ->map(($value, $key) => {
+    ->map(($value, $key) => {</strong>
         return preg_match("/_at$/", $key)
             ? new Carbon\\Carbon($value)
             : $value;
-    })
-    ->filter(($value, $key) => {
+    <strong>})
+    ->filter(($value, $key) => {</strong>
         return $key !== "password";
-    });
+    <strong>});</strong>
 
-var_dump($user->toArray());
+var_dump(<strong>$user->toArray()</strong>);
 `
 
 const example1After = `
-$user = (new \\Pre\\Collections\\Collection([
+$user = <strong>(new \\Pre\\Collections\\Collection([
     "email" => "cgpitt@gmail.com",
     "password" => "R3a77y.53cuRe!",
     "created_at" => "2017-01-01 00:00:00",
 ]))
-    ->map(function($value, $key) {
+    ->map(function($value, $key) {</strong>
         return preg_match("/_at$/", $key)
             ? new Carbon\\Carbon($value)
             : $value;
-    })
-    ->filter(function($value, $key) {
+    <strong>})
+    ->filter(function($value, $key) {</strong>
         return $key !== "password";
-    });
+    <strong>});</strong>
 
-var_dump($user->toArray());
+var_dump(<strong>$user->toArray()</strong>);
 `
 
 export default () => (

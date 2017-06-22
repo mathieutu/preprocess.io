@@ -11,11 +11,19 @@ composer require pre/optional-catch-type
 `
 
 const example1Before = `
-
+try {
+    throw new Exception("Oh no!");
+} catch (<strong>$e</strong>) {
+    print $e->getMessage();
+}
 `
 
 const example1After = `
-
+try {
+    throw new Exception("Oh no!");
+} catch (<strong>\Exception $e</strong>) {
+    print $e->getMessage();
+}
 `
 
 export default () => (
