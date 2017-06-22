@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "efe1f3e06dfee603c17386a8057a64be",
+    "content-hash": "c891be481b9ad2ee9587b6f5bf5df48d",
     "packages": [
         {
             "name": "amphp/aerys",
@@ -1128,6 +1128,107 @@
             "time": "2017-06-21T14:52:01+00:00"
         },
         {
+            "name": "pre/immutable-classes",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/preprocess/pre-immutable-classes.git",
+                "reference": "efe18de6d338d4bdfcbe365de2138e6369165688"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/preprocess/pre-immutable-classes/zipball/efe18de6d338d4bdfcbe365de2138e6369165688",
+                "reference": "efe18de6d338d4bdfcbe365de2138e6369165688",
+                "shasum": ""
+            },
+            "require": {
+                "pre/plugin": "^0.7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0|^6.0"
+            },
+            "type": "pre-macro",
+            "extra": {
+                "macros": [
+                    "src/macros.yay"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pre\\ImmutableClasses\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2017-06-22T07:27:09+00:00"
+        },
+        {
+            "name": "pre/optional-catch-type",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/preprocess/pre-optional-catch-type.git",
+                "reference": "eefb1037f3fc676079c049fbad21fe071fedf5b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/preprocess/pre-optional-catch-type/zipball/eefb1037f3fc676079c049fbad21fe071fedf5b6",
+                "reference": "eefb1037f3fc676079c049fbad21fe071fedf5b6",
+                "shasum": ""
+            },
+            "require": {
+                "pre/plugin": "^0.7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0|^6.0"
+            },
+            "type": "pre-macro",
+            "extra": {
+                "macros": [
+                    "src/macros.yay"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2017-06-22T06:46:22+00:00"
+        },
+        {
+            "name": "pre/parameter-loaders",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/preprocess/pre-parameter-loaders.git",
+                "reference": "ec1171138662df4b669b10ba43ae138a56c706cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/preprocess/pre-parameter-loaders/zipball/ec1171138662df4b669b10ba43ae138a56c706cc",
+                "reference": "ec1171138662df4b669b10ba43ae138a56c706cc",
+                "shasum": ""
+            },
+            "require": {
+                "pre/plugin": "^0.7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0|^6.0"
+            },
+            "type": "pre-macro",
+            "extra": {
+                "macros": [
+                    "src/macros.yay"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2017-06-22T07:06:11+00:00"
+        },
+        {
             "name": "pre/plugin",
             "version": "0.7.3",
             "source": {
@@ -1175,6 +1276,46 @@
             "time": "2017-06-06T08:51:14+00:00"
         },
         {
+            "name": "pre/property-loaders",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/preprocess/pre-property-loaders.git",
+                "reference": "1b79100786f36c3369d33fb43b73150d2dde2df6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/preprocess/pre-property-loaders/zipball/1b79100786f36c3369d33fb43b73150d2dde2df6",
+                "reference": "1b79100786f36c3369d33fb43b73150d2dde2df6",
+                "shasum": ""
+            },
+            "require": {
+                "pre/plugin": "^0.7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0|^6.0"
+            },
+            "type": "pre-macro",
+            "extra": {
+                "macros": [
+                    "src/macros.yay"
+                ]
+            },
+            "autoload": {
+                "files": [
+                    "src/expanders.php"
+                ],
+                "psr-4": {
+                    "Pre\\PropertyLoaders\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2017-06-22T07:20:43+00:00"
+        },
+        {
             "name": "pre/short-closures",
             "version": "0.5.2",
             "source": {
@@ -1205,6 +1346,43 @@
                 "MIT"
             ],
             "time": "2017-06-06T09:02:11+00:00"
+        },
+        {
+            "name": "pre/trailing-commas",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/preprocess/pre-trailing-commas.git",
+                "reference": "48aed34e854994e2c8a7cd68d630545ce5b80b03"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/preprocess/pre-trailing-commas/zipball/48aed34e854994e2c8a7cd68d630545ce5b80b03",
+                "reference": "48aed34e854994e2c8a7cd68d630545ce5b80b03",
+                "shasum": ""
+            },
+            "require": {
+                "pre/plugin": "^0.7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0|^6.0"
+            },
+            "type": "pre-macro",
+            "extra": {
+                "macros": [
+                    "src/macros.yay"
+                ]
+            },
+            "autoload": {
+                "files": [
+                    "src/parsers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2017-06-22T06:55:25+00:00"
         },
         {
             "name": "psr/log",

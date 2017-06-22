@@ -25,9 +25,15 @@ export default class extends Component {
     constructor(...params) {
         super(...params)
 
+        let code = "<?php\n\n";
+
+        if (this.props.showHashCode) {
+            code = window.location.hash ? atob(window.location.hash.substr(1)) : "<?php\n\n";
+        }
+
         this.state = {
             "tab": 0,
-            "code": window.location.hash ? atob(window.location.hash.substr(1)) : "<?php\n\n",
+            code,
             "compiled": "",
             "executed": "",
             "encoded": "",

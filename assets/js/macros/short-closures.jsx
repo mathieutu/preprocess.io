@@ -77,7 +77,7 @@ export default () => (
             </Column>
         </Row>
         <Row>
-            <Column>Then, use them in your code:</Column>
+            <Column>Then, use it in your code:</Column>
         </Row>
         <Row>
             <Column>

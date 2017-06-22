@@ -30,11 +30,15 @@ var_dump($highlighted);`,
 class Money {
     private string $currency {
         get;
+
         immutable set {
-            if (!in_array($value, Currency::all())) {
+            if (!in_array($value, ["USD"])) {
                 throw new InvalidArgumentException();
             }
+
+            $this->currency = $value;
         }
+
         immutable unset;
     }
 
@@ -89,5 +93,25 @@ macro {
 $columns = ["email", "password"];
 $placeholders = [":email", ":password"];
 
-var_dump("INSERT INTO users (%s) VALUES (%s)" % [$columns, $placeholders]);`
+var_dump("INSERT INTO users (%s) VALUES (%s)" % [$columns, $placeholders]);`,
+`<?php
+
+print "first" . PHP_EOL;
+
+defer {
+    print "last" . PHP_EOL;
+}
+
+print "in between" . PHP_EOL;`,
+`<?php
+
+immutable class Money {
+    private $currency;
+    private $amount;
+}
+
+$old = new Money();
+$new = $old->withCurrency("USD");
+
+var_dump($old !== $new);`
 ]
