@@ -104,12 +104,18 @@ export default class extends Component {
 
         const { data } = await response.json()
 
-        this.setState({
+        const options = {
             "tab": 1,
             "compiled": data.compileResult.stdout,
             "executed": data.executeResult ? data.executeResult.stdout : "",
             "isProcessing": false,
-        })
+        }
+
+        if (this.props.hideProcessors) {
+            options["tab"] = 2;
+        }
+
+        this.setState(options)
     }
 
     componentDidMount() {
@@ -170,14 +176,21 @@ export default class extends Component {
                         </div>
                         <div className="tabs">
                             <button className={this.state.tab === 0 ? "selected" : ""} onClick={e => this.setState({ "tab": 0, "showTabWarning": false })}>
-                                code.pre
+                                {this.props.hideProcessors && (
+                                    <span>code.php</span>
+                                )}
+                                {!this.props.hideProcessors && (
+                                    <span>code.pre</span>
+                                )}
                                 {this.state.isProcessing && (
                                   <span className="indicator"></span>
                                 )}
                             </button>
-                            <button className={this.state.tab === 1 ? "selected" : ""} onClick={e => this.setState({ "tab": 1 })}>
-                                code.php
-                            </button>
+                            {!this.props.hideProcessors && (
+                                <button className={this.state.tab === 1 ? "selected" : ""} onClick={e => this.setState({ "tab": 1 })}>
+                                    code.php
+                                </button>
+                            )}
                             <button className={this.state.tab === 2 ? "selected" : ""} onClick={e => this.setState({ "tab": 2 })}>
                                 output
                             </button>
@@ -214,7 +227,7 @@ export default class extends Component {
                                 }}
                             />
                         )}
-                        {this.state.tab === 1 && (
+                        {(this.state.tab === 1 && !this.props.hideProcessors) && (
                             <AceEditor
                                 focus={true}
                                 mode="php"

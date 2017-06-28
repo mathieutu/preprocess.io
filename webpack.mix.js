@@ -16,4 +16,5 @@ mix.js("assets/js/app.jsx", "public/js")
 mix.sass("assets/css/app.scss", "public/css")
 
 mix.js("assets/js/embed.jsx", "public/js")
+mix.js("assets/js/plain-embed.jsx", "public/js")
 mix.sass("assets/css/embed.scss", "public/css")
