@@ -31,7 +31,7 @@ class ProcessResponder
 
         $expand = base64_encode("
             require __DIR__ . '/vendor/autoload.php';
-            print Pre\\Plugin\\expand(base64_decode('{$code}'));
+            print Pre\\Plugin\\formatCode(Pre\\Plugin\\expand(base64_decode('{$code}')));
         ");
 
         $result = await $this->process($expand);

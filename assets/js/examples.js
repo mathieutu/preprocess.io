@@ -134,8 +134,8 @@ class Proxy {
     private $formatter;
 
     public function __construct(
-        <strong>Factory $factory = app("factory"),
-        Formatter $formatter = new ProxyFormatter("default")</strong>
+        Factory $factory = app("factory"),
+        Formatter $formatter = new ProxyFormatter("default")
     ) {
         $this->factory = $factory;
         $this->formatter = $formatter;

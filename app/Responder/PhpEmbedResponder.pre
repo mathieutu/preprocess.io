@@ -7,7 +7,7 @@ use Aerys\Response;
 
 use function Amp\File\get;
 
-class PlainEmbedResponder
+class PhpEmbedResponder
 {
     use Responds;
 
@@ -16,7 +16,7 @@ class PlainEmbedResponder
         static $contents;
 
         if (!$contents) {
-            $contents = await get(BASE_PATH . "/public/plain-embed.html");
+            $contents = await get(BASE_PATH . "/public/php-embed.html");
         }
 
         $response->end($contents);

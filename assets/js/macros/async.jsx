@@ -44,6 +44,27 @@ export default () => (
         </Row>
         <Row>
             <Column>
+                PHP was born as a synchronous programming language, but it is
+                beginning to change. Projects like <a href="http://amphp.org/">
+                AMPHP</a> make writing asynchronous, parallel-execution code
+                easy; but asynchronous code is still a second-class citizen in
+                the language.
+            </Column>
+        </Row>
+        <Row>
+            <Column>
+                AMPHP can transform ordinary generators into promise-like
+                coroutines. Interruptible functions that can be non-blocking
+                while still being as easy to read as blocking code.
+            </Column>
+        </Row>
+        <Row>
+            <Column>
+                To install the async/await syntax, use:
+            </Column>
+        </Row>
+        <Row>
+            <Column>
                 <CodeBlock code={install} />
             </Column>
         </Row>
