@@ -978,16 +978,16 @@
         },
         {
             "name": "pre/async",
-            "version": "0.7.3",
+            "version": "0.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/preprocess/pre-async.git",
-                "reference": "359bcab1f4e1e6b2065b9c8d4fd4a6f01bd56538"
+                "reference": "b0dfd505eb2eb9b0d071ce0c23df62954c317df9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/preprocess/pre-async/zipball/359bcab1f4e1e6b2065b9c8d4fd4a6f01bd56538",
-                "reference": "359bcab1f4e1e6b2065b9c8d4fd4a6f01bd56538",
+                "url": "https://api.github.com/repos/preprocess/pre-async/zipball/b0dfd505eb2eb9b0d071ce0c23df62954c317df9",
+                "reference": "b0dfd505eb2eb9b0d071ce0c23df62954c317df9",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1011,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2017-06-30T12:24:28+00:00"
+            "time": "2017-06-30T12:32:33+00:00"
         },
         {
             "name": "pre/class-accessors",
