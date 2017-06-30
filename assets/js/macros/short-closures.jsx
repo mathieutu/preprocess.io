@@ -35,7 +35,7 @@ $amplify = ["pear"];
 
 $amplified = array_map(<strong>[
     $amplify = $amplify ?? null,
-    "fn" => function ($fruit) use (&$amplify) {
+    "fn" => function($fruit) use (&$amplify) {
         return in_array($fruit, $amplify)
             ? strtoupper($fruit)
             : $fruit;
@@ -44,7 +44,7 @@ $amplified = array_map(<strong>[
 
 $filtered = array_filter($amplifed, <strong>[
     $exclude = $exclude ?? null,
-    "fn" => function ($fruit) use (&$exclude) {
+    "fn" => function($fruit) use (&$exclude) {
         return !in_array($fruit, $exclude);
     }
 ]["fn"]</strong>);

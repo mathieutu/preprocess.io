@@ -38,7 +38,7 @@ class Money {
 
     private $currency;
 
-    <strong>public function getCurrency():string {
+    <strong>public function getCurrency(): string {
         return $this->currency;
     }
 
@@ -66,7 +66,7 @@ class Money {
 
     private $amount;
 
-    <strong>public function getAmount():float {
+    <strong>public function getAmount(): float {
         return $this->amount;
     }
 

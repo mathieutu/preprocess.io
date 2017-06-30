@@ -21,17 +21,15 @@ var_dump($highlighted);
 `
 
 const example1After = `
-function highlightFileContents($path): <strong>\\Amp\\Promise</strong> {
-    return <strong>call_user_func(
-        PRE_ASYNC_WRAPPER,
-        function() use (&$path) {</strong>
-            $source = yield Amp\\File\\get($path);
-            return highlight_string($source, true);
-        <strong>}
-    );</strong>
-}
+<strong>function highlightFileContents($path): \\Amp\\Promise
+{
+    return \\Amp\\resolve(function() use (&$path) {</strong>
+        $source = yield Amp\\File\\get($path);
+        return highlight_string($source, true);
+    <strong>});
+}</strong>
 
-$highlighted = Amp\\wait(highlightFileContents("helpers.php"));
+$highlighted = Amp\wait(highlightFileContents("helpers.php"));
 var_dump($highlighted);
 `
 
