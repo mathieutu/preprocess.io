@@ -978,16 +978,16 @@
         },
         {
             "name": "pre/async",
-            "version": "0.7.4",
+            "version": "0.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/preprocess/pre-async.git",
-                "reference": "b0dfd505eb2eb9b0d071ce0c23df62954c317df9"
+                "reference": "35a02c554714291a0586f38aad8dc533fc890db7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/preprocess/pre-async/zipball/b0dfd505eb2eb9b0d071ce0c23df62954c317df9",
-                "reference": "b0dfd505eb2eb9b0d071ce0c23df62954c317df9",
+                "url": "https://api.github.com/repos/preprocess/pre-async/zipball/35a02c554714291a0586f38aad8dc533fc890db7",
+                "reference": "35a02c554714291a0586f38aad8dc533fc890db7",
                 "shasum": ""
             },
             "require": {
@@ -1002,16 +1002,11 @@
                     "src/macros.yay"
                 ]
             },
-            "autoload": {
-                "files": [
-                    "src/constants.php"
-                ]
-            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "time": "2017-06-30T12:32:33+00:00"
+            "time": "2017-06-30T13:49:41+00:00"
         },
         {
             "name": "pre/class-accessors",
