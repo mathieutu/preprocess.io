@@ -43,7 +43,7 @@ class ProcessResponder
     {
         $eval = "eval(base64_decode(\"{$code}\"));";
 
-        $command = "docker run preprocess timeout 5 php -r '{$eval}'";
+        $command = "docker run --rm preprocess timeout 5 php -r '{$eval}'";
 
         $process = new Process($command);
         $result = await $process->exec(Process::BUFFER_ALL);
