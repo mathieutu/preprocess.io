@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cae325b1a5e6a0212c8eba9ccd11e61",
+    "content-hash": "bcd5b18550ed2216a89203c8c0fd96fc",
     "packages": [
         {
             "name": "amphp/aerys",
@@ -1054,16 +1054,16 @@
         },
         {
             "name": "pre/collections",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/preprocess/pre-collections.git",
-                "reference": "782364cc86a75322ac23f67956b21b9290122bd2"
+                "reference": "f6f26d23b24bda43c7099bfb313d8be007f80120"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/preprocess/pre-collections/zipball/782364cc86a75322ac23f67956b21b9290122bd2",
-                "reference": "782364cc86a75322ac23f67956b21b9290122bd2",
+                "url": "https://api.github.com/repos/preprocess/pre-collections/zipball/f6f26d23b24bda43c7099bfb313d8be007f80120",
+                "reference": "f6f26d23b24bda43c7099bfb313d8be007f80120",
                 "shasum": ""
             },
             "require": {
@@ -1090,7 +1090,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2017-08-16T14:28:25+00:00"
+            "time": "2017-08-16T14:50:20+00:00"
         },
         {
             "name": "pre/deferred",

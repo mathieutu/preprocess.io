@@ -11,7 +11,7 @@
         "nesbot/carbon": "^1.22",
         "pre/async": "^0.7.2",
         "pre/class-accessors": "^0.6.4",
-        "pre/collections": "^0.3.0",
+        "pre/collections": "^0.3.2",
         "pre/deferred": "^0.4.1",
         "pre/immutable-classes": "^0.3.0",
         "pre/optional-catch-type": "^0.2.0",
