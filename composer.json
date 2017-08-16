@@ -11,11 +11,12 @@
         "nesbot/carbon": "^1.22",
         "pre/async": "^0.7.2",
         "pre/class-accessors": "^0.6.4",
-        "pre/collections": "^0.2.2",
+        "pre/collections": "^0.3.0",
         "pre/deferred": "^0.4.1",
         "pre/immutable-classes": "^0.3.0",
         "pre/optional-catch-type": "^0.2.0",
         "pre/parameter-loaders": "^0.4.0",
+        "pre/phpx": "dev-master",
         "pre/property-loaders": "^0.4.0",
         "pre/short-closures": "^0.5.2",
         "pre/trailing-commas": "^0.2.0",
@@ -32,5 +33,7 @@
     "config": {
         "process-timeout": 0,
         "sort-packages": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
