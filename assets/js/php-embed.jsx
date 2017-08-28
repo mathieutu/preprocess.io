@@ -12,6 +12,7 @@ const rect = container.getBoundingClientRect()
 
 const App = () => (
     <EditorSection
+      dontFocus
       showHashCode
       hideButtons
       hideProcessors

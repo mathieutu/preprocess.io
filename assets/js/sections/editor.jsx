@@ -202,7 +202,7 @@ export default class extends Component {
                         </div>
                         {this.state.tab === 0 && (
                             <AceEditor
-                                focus={true}
+                                focus={!this.props.dontFocus}
                                 mode="php"
                                 theme="chaos"
                                 value={this.state.code}
